@@ -4,39 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/sign_up"
+    android:orientation="vertical"
     tools:context=".SignUp">
 
     <ImageView
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:src="@drawable/ic_paper_plane"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_paper_plane" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/sign_up"
+        android:textColor="@color/colorWhite"
         android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorWhite"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
         android:hint="@string/username"
         android:textColorHint="@color/edit_text_login"
         app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
         app:endIconTint="@color/colorBlack"
-        app:hintTextColor="@color/colorBlack"
+        app:hintTextAppearance="@style/HintText"
         app:startIconDrawable="@drawable/ic_user"
         app:startIconTint="@color/colorBlack">
 
@@ -45,24 +43,23 @@
             android:layout_height="59dp"
             android:background="@drawable/boder_edit_text"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textNoSuggestions"
             android:textColor="@color/colorBlack"
             android:textStyle="bold">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:hint="@string/email"
+        app:hintTextAppearance="@style/HintText"
         android:textColorHint="@color/edit_text_login"
         app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
         app:endIconTint="@color/colorBlack"
-        app:hintTextColor="@color/colorBlack"
         app:startIconDrawable="@drawable/ic_email"
         app:startIconTint="@color/colorBlack">
 
@@ -71,24 +68,27 @@
             android:layout_height="59dp"
             android:background="@drawable/boder_edit_text"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textNoSuggestions"
             android:textColor="@color/colorBlack"
             android:textStyle="bold">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:hint="@string/password"
+        app:hintTextAppearance="@style/HintText"
+        app:counterTextAppearance="@style/CounterText"
         android:textColorHint="@color/edit_text_login"
-        app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
-        app:endIconTint="@color/colorBlack"
-        app:hintTextColor="@color/colorBlack"
+        app:counterEnabled="true"
+        app:counterTextColor="@color/colorWhite"
+        app:passwordToggleDrawable="@drawable/icon_selector"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorBlack"
         app:startIconDrawable="@drawable/ic_padlock"
         app:startIconTint="@color/colorBlack">
 
@@ -97,24 +97,28 @@
             android:layout_height="59dp"
             android:background="@drawable/boder_edit_text"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:textColor="@color/colorBlack"
             android:textStyle="bold">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="-15dp"
         android:layout_marginRight="50dp"
         android:hint="@string/confirm_password"
+        app:hintTextAppearance="@style/HintText"
+        app:counterTextAppearance="@style/CounterText"
         android:textColorHint="@color/edit_text_login"
-        app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
-        app:endIconTint="@color/colorBlack"
-        app:hintTextColor="@color/colorBlack"
+        app:counterEnabled="true"
+        app:counterTextColor="@color/colorWhite"
+        app:passwordToggleDrawable="@drawable/icon_selector"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorBlack"
         app:startIconDrawable="@drawable/ic_padlock"
         app:startIconTint="@color/colorBlack">
 
@@ -123,7 +127,7 @@
             android:layout_height="59dp"
             android:background="@drawable/boder_edit_text"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:textColor="@color/colorBlack"
             android:textStyle="bold">
 
@@ -133,23 +137,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
         android:text="@string/need_help"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"/>
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/boder_button_login"
         android:layout_marginLeft="120dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="120dp"
+        android:background="@drawable/boder_button_login"
         android:text="@string/sign_up"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:textAllCaps="false"
-        android:layout_marginTop="60dp"/>
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -7,5 +7,6 @@
     <color name="colorWhite">#FFF</color>
     <color name="transparent">#00000000</color>
     <color name="edit_text_login">#77777E</color>
+    <color name="colorPink">#EA4646</color>
 
 </resources>
