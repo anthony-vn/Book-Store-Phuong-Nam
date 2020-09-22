@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BookStorePhuongNam</string>
+    <string name="login">Login</string>
+    <string name="you_don_t_have_an_account">You don\'t have an account?</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="need_help">Need help?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="title_forgot_pass">Enter the email address \nassociated with your account.</string>
+    <string name="desc_forgot_pass">We will email you a link to reset\n your password.</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="send">Send</string>
+    <string name="title_verify">Enter the verification code\n we just sent you on your email address.</string>
+    <string name="new_credentials">Create a new password</string>
+</resources>
