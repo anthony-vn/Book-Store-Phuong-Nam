@@ -89,7 +89,7 @@
         app:passwordToggleDrawable="@drawable/icon_selector"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/colorBlack"
-        app:startIconDrawable="@drawable/ic_padlock"
+        app:startIconDrawable="@drawable/ic_lock_black"
         app:startIconTint="@color/colorBlack">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -119,7 +119,7 @@
         app:passwordToggleDrawable="@drawable/icon_selector"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/colorBlack"
-        app:startIconDrawable="@drawable/ic_padlock"
+        app:startIconDrawable="@drawable/ic_lock_black"
         app:startIconTint="@color/colorBlack">
 
         <com.google.android.material.textfield.TextInputEditText
