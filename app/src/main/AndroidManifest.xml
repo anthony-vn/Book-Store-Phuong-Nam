@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PasswordUpdate" />
-        <activity android:name=".forgot_password">
+        <activity android:name=".ForgotPassword">
 
         </activity>
         <activity android:name=".SignUp" />

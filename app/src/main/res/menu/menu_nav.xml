@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_24px"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_theloai"
+            android:icon="@drawable/ic_backend"
+            android:title="Thể loại" />
+        <item
+            android:id="@+id/nav_sach"
+            android:icon="@drawable/ic_book"
+            android:title="Sách" />
+        <item
+            android:id="@+id/nav_hoadon"
+            android:icon="@drawable/ic_hoadon"
+            android:title="Hóa đơn" />
+
+    </group>
+
+    <item android:title="Account">
+
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_account"
+                    android:title="My Account" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_exit_to_app_24px"
+                    android:title="Exit" />
+
+            </group>
+        </menu>
+
+    </item>
+</menu>
