@@ -35,7 +35,7 @@
         app:endIconMode="clear_text"
         app:endIconTint="@color/colorBlack"
         app:hintTextAppearance="@style/HintText"
-        app:startIconDrawable="@drawable/ic_user"
+        app:startIconDrawable="@drawable/ic_user_man"
         app:startIconTint="@color/colorBlack">
 
         <com.google.android.material.textfield.TextInputEditText
