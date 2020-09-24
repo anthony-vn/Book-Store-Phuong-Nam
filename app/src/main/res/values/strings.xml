@@ -21,4 +21,6 @@
     <string name="finish">Finish</string>
     <string name="change_password">Create a new password</string>
     <string name="desc_change_password">Create a new password to\n log into the app</string>
+    <string name="so_luong">Số lượng</string>
+    <string name="ten_sach">Tên sách</string>
 </resources>
