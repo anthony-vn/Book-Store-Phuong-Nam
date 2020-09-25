@@ -8,13 +8,13 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationViews"
+        android:id="@+id/myNavigationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/colorWhite"
         app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_nav">
+        app:menu="@menu/my_navigation_item">
 
     </com.google.android.material.navigation.NavigationView>
 
@@ -37,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/imgAddNav"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="8dp"
@@ -52,6 +52,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -81,11 +82,10 @@
                         android:padding="20dp">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:layout_gravity="center_vertical"
-                            android:elevation="4dp"
-                            android:src="@drawable/ic_thongke" />
+                            android:src="@drawable/ic_bar_chart" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -98,7 +98,7 @@
                                 android:gravity="center"
                                 android:text="Tính đến thời điểm hiện tại"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="13sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -110,7 +110,7 @@
                                 android:layout_marginTop="10dp"
                                 android:text="khoản thu"
                                 android:textColor="#665959"
-                                android:textSize="10sp"
+                                android:textSize="12sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -122,8 +122,9 @@
                                 android:layout_marginTop="7dp"
                                 android:layout_toRightOf="@id/t1"
                                 android:text="3.578.010 VNĐ"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#2712AF"/>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -138,7 +139,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:text="Đã bán"
                                     android:textColor="#665959"
-                                    android:textSize="10sp"
+                                    android:textSize="12sp"
                                     android:textStyle="bold" />
 
                                 <ImageView
@@ -163,7 +164,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="Sách công nghệ"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -171,7 +172,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="Sách kế toán"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -179,7 +180,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="Sách lịch sử"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -187,7 +188,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="Sách văn học"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -195,7 +196,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="Sách ngoại ngữ"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -203,7 +204,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="Sách địa lý"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
                                     </LinearLayout>
 
@@ -219,7 +220,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="512"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -227,7 +228,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="123"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -235,7 +236,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="124"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -243,7 +244,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="436"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -251,7 +252,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="53"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
 
                                         <TextView
@@ -259,7 +260,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="34"
                                             android:textColor="#665959"
-                                            android:textSize="10sp"
+                                            android:textSize="12sp"
                                             android:textStyle="bold" />
                                     </LinearLayout>
 
@@ -326,7 +327,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Sách công nghệ"
                                     android:textColor="@color/colorBlack"
-                                    android:textSize="15sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -334,34 +335,35 @@
                                     android:layout_height="wrap_content"
                                     android:text="Sách kế toán"
                                     android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
+                                    android:textSize="14sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="54dp"
+                                android:layout_marginLeft="30dp"
                                 android:layout_toRightOf="@id/lbcn"
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="37.9dp"
-                                    android:layout_height="27.23dp"
-                                    android:layout_gravity="right"
+                                    android:layout_width="28dp"
+                                    android:layout_height="27dp"
+                                    android:layout_gravity="center"
                                     android:src="@drawable/ic_1st" />
 
                                 <ImageView
-                                    android:layout_width="13.29dp"
+                                    android:layout_width="16dp"
                                     android:layout_height="18.81dp"
                                     android:layout_gravity="center"
                                     android:src="@drawable/ic_two" />
 
                                 <ImageView
-                                    android:layout_width="10.03dp"
-                                    android:layout_height="17.18dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_width="12dp"
+                                    android:layout_height="13dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/ic_three" />
+                                    android:src="@drawable/threes" />
 
                             </LinearLayout>
 
@@ -601,8 +603,8 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="30dp"
                         android:layout_marginEnd="30dp"
@@ -627,36 +629,12 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/feater_recycleView"/>
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/thongkethangtruoc"
-                    android:background="@drawable/boder_thongkethangtruoc"
-                    android:orientation="horizontal"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center_vertical"
-                        android:elevation="5dp"
-                        android:src="@drawable/ic_analytics" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="5.234.124 VNĐ"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                    android:id="@+id/rcv_thongkethangtruoc_khoanthu"
+                    android:layout_height="150dp" />
             </LinearLayout>
-
         </ScrollView>
     </LinearLayout>
 

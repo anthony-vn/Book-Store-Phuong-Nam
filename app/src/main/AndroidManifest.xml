@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".onHome.userDashBroad"></activity>
         <activity android:name=".AminationOnOpenScreen.AnimationSplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PasswordUpdate" />
-        <activity android:name=".ForgotPassword">
-
-        </activity>
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
