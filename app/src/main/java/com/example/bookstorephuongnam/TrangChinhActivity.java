@@ -1,6 +1,7 @@
 package com.example.bookstorephuongnam;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -22,7 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class TrangChinhActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     RecyclerView rcv_thongkethangtruoc_khoanthu;
     RecyclerView.Adapter adapter;
@@ -33,34 +34,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ImageView img_menuicon, img_add;
     LinearLayout contentView;
     static final float END_SCALE = 0.7f;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
         //Hooks
         rcv_thongkethangtruoc_khoanthu = findViewById(R.id.rcv_thongkethangtruoc_khoanthu);
         img_add = findViewById(R.id.imgAddNav);
-
         //Menu Hooks
         drawerLayout = findViewById(R.id.drawable_layout);
         navigationView = findViewById(R.id.myNavigationView);
         img_menuicon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
 
-        //hiển thị color cho icon navigation
+        //Check Login
+
+        //vô hiệu hóa màu cho item khi chọn trong item navigation view
         navigationView.setItemIconTintList(null);
 
+        //Gọi các chức năng
         navigationDrawer();
         rcv_thongkethangtruoc_khoanthu();
     }
-
     private void navigationDrawer() {
-
         //Navigation Drawer
         navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(MainActivity.this);
+        navigationView.setNavigationItemSelectedListener(TrangChinhActivity.this);
         navigationView.setCheckedItem(R.id.nav_home);
 
         img_menuicon.setOnClickListener(new View.OnClickListener() {
@@ -71,11 +72,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 else drawerLayout.openDrawer(GravityCompat.START);
             }
         });
-
         animateNavigationDrawer();
     }
-    private void animateNavigationDrawer() {
 
+    private void animateNavigationDrawer() {
         //Add any color or remove it to use the default one!
         //To make it transparent use Color.Transparent in side setScrimColor();
         //drawerLayout.setScrimColor(Color.TRANSPARENT);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_home:
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
                 break;
         }
         return true;
@@ -125,4 +125,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400, 0xffaff600});
     }
+
+
 }

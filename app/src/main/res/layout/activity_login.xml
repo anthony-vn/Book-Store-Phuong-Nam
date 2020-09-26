@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:layout_width="120dp"
@@ -26,6 +26,7 @@
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -41,6 +42,7 @@
         app:startIconTint="@color/colorBlack">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:background="@drawable/boder_edit_text"
@@ -53,6 +55,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -71,6 +74,7 @@
         app:startIconTint="@color/colorBlack">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:background="@drawable/boder_edit_text"
@@ -112,7 +116,7 @@
 
 
     <Button
-        android:id="@+id/btn_login"
+        android:onClick="checkLogin"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="120dp"

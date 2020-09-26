@@ -18,10 +18,7 @@ public class NguoiDungDAO {
     private DatabaseHelper dbHelper;
 
     public static final String TABLE_NAME = "NguoiDung";
-    public static final String SQL_NGUOI_DUNG = "CREATE TABLE " + TABLE_NAME + " " +
-            "(username text primary key, " +
-            "password text, phone text, " +
-            "hoten text);";
+    public static final String SQL_NGUOI_DUNG = "CREATE TABLE " +TABLE_NAME+ "(username text primary key, password text, phone text, hoten text);";
     public static final String TAG = "NguoiDungDAO";
 
     public NguoiDungDAO(Context context) {
