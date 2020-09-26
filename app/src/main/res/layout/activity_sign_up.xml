@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:hint="@string/email"
+        android:hint="Phone number"
         app:hintTextAppearance="@style/HintText"
         android:textColorHint="@color/edit_text_login"
         app:endIconMode="clear_text"

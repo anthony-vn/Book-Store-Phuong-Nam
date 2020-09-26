@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+    android:background="@drawable/background_login"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -116,7 +116,7 @@
 
 
     <Button
-        android:onClick="checkLogin"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="120dp"

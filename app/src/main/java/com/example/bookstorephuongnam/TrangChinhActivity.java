@@ -1,7 +1,6 @@
 package com.example.bookstorephuongnam;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -39,7 +38,7 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_trang_chinh);
         //Hooks
         rcv_thongkethangtruoc_khoanthu = findViewById(R.id.rcv_thongkethangtruoc_khoanthu);
         img_add = findViewById(R.id.imgAddNav);
