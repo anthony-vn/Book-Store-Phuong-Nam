@@ -5,9 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#95ABC7"
-    tools:context=".TheLoaiActivity">
+    tools:context=".AddTheLoaiActivity"
+    android:transitionName="transition_theloai">
 
     <ImageView
+        android:onClick="returnThemTheLoai"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/back_ic"
@@ -67,7 +69,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="58dp"
+            android:layout_height="90dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/button_them"
             android:layout_gravity="center_horizontal"/>

@@ -103,7 +103,7 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
                 startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
                 break;
             case R.id.nav_theloai:
-                startActivity(new Intent(getApplicationContext(), ListTheLoaiActivity.class));
+                startActivity(new Intent(getApplicationContext(), TheLoaiActivity.class));
                 break;
         }
         return true;
