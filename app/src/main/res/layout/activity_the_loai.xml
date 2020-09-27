@@ -27,7 +27,7 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/group_55"
+        android:src="@drawable/img_theloai"
         android:layout_gravity="center_horizontal"/>
     
     <LinearLayout
@@ -65,17 +65,12 @@
             android:inputType="textNoSuggestions"
             android:textColor="@color/colorBlack"/>
 
-        <Button
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="58dp"
-            android:text="Thêm"
             android:layout_marginTop="20dp"
-            android:background="@drawable/boder_button_themtheloai"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"/>
+            android:src="@drawable/button_them"
+            android:layout_gravity="center_horizontal"/>
 
 
     </LinearLayout>

@@ -75,9 +75,6 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
     }
 
     private void animateNavigationDrawer() {
-        //Add any color or remove it to use the default one!
-        //To make it transparent use Color.Transparent in side setScrimColor();
-        //drawerLayout.setScrimColor(Color.TRANSPARENT);
         drawerLayout.setScrimColor(getResources().getColor(R.color.transparent));
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
@@ -104,6 +101,9 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         switch (item.getItemId()){
             case R.id.nav_home:
                 startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
+                break;
+            case R.id.nav_theloai:
+                startActivity(new Intent(getApplicationContext(), ListTheLoaiActivity.class));
                 break;
         }
         return true;

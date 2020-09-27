@@ -19,11 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox chk_Rem;
     TextView tv_signUp, tv_forgotPass;
     EditText username, password;
-    Button btnLogin;
-
     private long backPressedTime;
-    NguoiDungDAO nguoiDungDAO;
-    String strUser, strPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         anhXa();
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkLogin(view);
-            }
-        });
     }
 
 
@@ -58,40 +48,5 @@ public class LoginActivity extends AppCompatActivity {
         chk_Rem = findViewById(R.id.chkRememberMe);
         username = findViewById(R.id.edt_username);
         password = findViewById(R.id.edt_password);
-    }
-
-    public void checkLogin(View view) {
-        strUser = username.getText().toString();
-        strPass = password.getText().toString();
-        if (strUser.isEmpty() || strPass.isEmpty()) {
-            username.setError("Username không được để trống!");
-            password.setError("Password không được để trống!");
-        } else {
-            if (strUser.equalsIgnoreCase("admin") && strPass.equalsIgnoreCase("admin")) {
-                rememberUser(strUser, strPass, chk_Rem.isChecked());
-                Intent intent = new Intent(LoginActivity.this, TrangChinhActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Toast.makeText(getApplicationContext(), "Tên đăng nhập và mật khẩu không đúng",
-                        Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    public void rememberUser(String u, String p, boolean status){
-        SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
-        SharedPreferences.Editor edit = pref.edit();
-        if (!status){
-            //xoa tinh trang luu tru truoc do
-            edit.clear();
-        }else {
-            //luu du lieu
-            edit.putString("USERNAME",u);
-            edit.putString("PASSWORD",p);
-            edit.putBoolean("REMEMBER",status);
-        }
-        //luu lai toan bo
-        edit.commit();
     }
 }
