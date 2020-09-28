@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class AddTheLoaiActivity extends AppCompatActivity {
+public class HoaDonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_theloai);
+        setContentView(R.layout.activity_hoa_don);
     }
 
-    public void returnThemTheLoai(View view) {
-        finish();
+    public void returnListHoaDon(View view) {
+    }
+
+    public void callThemHoaDonActivity(View view) {
     }
 }

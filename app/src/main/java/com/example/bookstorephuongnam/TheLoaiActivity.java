@@ -32,4 +32,8 @@ public class TheLoaiActivity extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(TheLoaiActivity.this);
         startActivity(intent, options.toBundle());
     }
+
+    public void returnListBook(View view) {
+        finish();
+    }
 }

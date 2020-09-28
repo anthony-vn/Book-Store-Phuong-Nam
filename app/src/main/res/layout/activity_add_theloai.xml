@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#95ABC7"
+    tools:context=".AddTheLoaiActivity"
+    android:transitionName="transition_theloai">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:onClick="returnThemTheLoai"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back_ic"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Category Of Books"
+            android:textColor="@color/colorBlack"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/muli_extrabold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="-20dp"/>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/img_theloai"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mã thể loại"
+                android:textSize="18sp"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/colorBlack"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên thể loại"
+                android:textSize="18sp"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/colorBlack"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vị trí"
+                android:textSize="18sp"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/colorBlack"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mô tả"
+                android:textSize="18sp"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/colorBlack"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/button_them_theloai"
+                android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

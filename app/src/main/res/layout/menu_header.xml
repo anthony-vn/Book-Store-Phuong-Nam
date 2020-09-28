@@ -29,11 +29,4 @@
         android:layout_height="40dp"
         android:layout_above="@id/app_name"
         android:src="@drawable/man" />
-
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="175dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/man" />
 </RelativeLayout>

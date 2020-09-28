@@ -91,7 +91,7 @@
                         android:layout_below="@id/doanhthuhomnay"
                         android:background="@drawable/boder_doanhthuhomnay"
                         android:orientation="horizontal"
-                        android:padding="20dp">
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="100dp"
@@ -118,7 +118,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/tinhdenthoidiemhientai"
-                                android:layout_marginLeft="20dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="10dp"
                                 android:text="Doanh thu"
                                 android:textColor="#665959"
@@ -130,7 +130,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/tinhdenthoidiemhientai"
-                                android:layout_marginLeft="40dp"
+                                android:layout_marginLeft="10dp"
                                 android:layout_marginTop="7dp"
                                 android:layout_toRightOf="@id/t1"
                                 android:text="3.578.010 VNĐ"
@@ -148,7 +148,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginLeft="5dp"
                                     android:text="Đã bán"
                                     android:textColor="#665959"
                                     android:textSize="12sp"
@@ -158,7 +158,7 @@
                                     android:layout_width="20dp"
                                     android:layout_height="78dp"
                                     android:layout_gravity="center_vertical"
-                                    android:src="@drawable/ic_ngoac_nhon" />
+                                    android:src="@drawable/ic_ngoacnhon" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -389,7 +389,7 @@
                     android:layout_marginTop="25dp">
 
                     <TextView
-                        android:id="@+id/sachtonkho"
+                        android:id="@+id/title_sachtonkho"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
@@ -400,227 +400,163 @@
                         android:textStyle="bold" />
 
                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_below="@id/title_sachtonkho"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/sachtonkho"
                         android:background="@drawable/boder_sachtonkho"
-                        android:orientation="horizontal"
-                        android:padding="20dp">
-
-                        <RelativeLayout
-                            android:layout_width="250dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/line4"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-                            <LinearLayout
-                                android:id="@+id/title_stk"
-                                android:layout_width="250dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="36dp"
-                                    android:text="@string/ten_sach"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="69dp"
-                                    android:text="@string/so_luong"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/line_img_listchu"
+                            <RelativeLayout
+                                android:layout_gravity="center"
                                 android:layout_width="wrap_content"
-                                android:layout_height="105dp"
-                                android:layout_below="@id/title_stk"
-                                android:orientation="vertical">
+                                android:layout_height="wrap_content">
 
-                                <ImageView
-                                    android:layout_width="17dp"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center"
-                                    android:padding="1dp"
-                                    android:src="@drawable/ic_dictionary" />
-
-                                <ImageView
-                                    android:layout_width="17dp"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center"
-                                    android:padding="1dp"
-                                    android:src="@drawable/ic_book_it" />
-
-                                <ImageView
-                                    android:layout_width="17dp"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center"
-                                    android:padding="1dp"
-                                    android:src="@drawable/ic_book_kt" />
-
-                                <ImageView
-                                    android:layout_width="17dp"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center"
-                                    android:padding="1dp"
-                                    android:src="@drawable/ic_history_book" />
-
-                                <ImageView
-                                    android:layout_width="17dp"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center"
-                                    android:padding="1dp"
-                                    android:src="@drawable/ic_sachvanhoc" />
-
-                                <ImageView
-                                    android:layout_width="17dp"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center"
-                                    android:padding="1dp"
-                                    android:src="@drawable/ic_sachdialy" />
-
-                            </LinearLayout>
-
-
-                            <LinearLayout
-                                android:id="@+id/line_listchu_stk"
-                                android:layout_width="130dp"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/title_stk"
-                                android:layout_marginLeft="20dp"
-                                android:layout_toRightOf="@id/line_img_listchu"
-                                android:orientation="vertical">
-
-                                <TextView
+                                <LinearLayout
+                                    android:id="@+id/line_listchu_stk"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:text="Sách ngoại ngữ"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Tên sách"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Sách ngoại ngữ"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:text="Sách công nghệ"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Sách công nghệ"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:text="Sách kế toán"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Sách kế toán"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:text="Sách lịch sử"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Sách lịch sử"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:text="Sách văn học"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Sách văn học"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:text="Sách địa lý"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Sách địa lý"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/title_stk"
-                                android:layout_toRightOf="@+id/line_listchu_stk"
-                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="50dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/line_listchu_stk"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:text="Số lượng"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                    <TextView
+                                        android:id="@+id/price_stk_nn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="200"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/price_stk_nn"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:text="200"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:id="@+id/price_stk_cn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="200"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/price_stk_cn"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:text="200"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:id="@+id/price_stk_kt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="200"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/price_stk_kt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:text="200"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:id="@+id/price_stk_ls"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="200"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/price_stk_ls"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:text="200"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:id="@+id/price_stk_vh"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="200"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/price_stk_vh"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:text="200"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    <TextView
+                                        android:id="@+id/price_stk_dl"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="200"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/price_stk_dl"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="17dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:text="200"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                </LinearLayout>
 
-                            </LinearLayout>
+                            </RelativeLayout>
 
-                        </RelativeLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toRightOf="@id/line4"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/img_inventory" />
+
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginEnd="30dp"
-                        android:src="@drawable/img_inventory" />
                 </RelativeLayout>
 
                 <ImageView
