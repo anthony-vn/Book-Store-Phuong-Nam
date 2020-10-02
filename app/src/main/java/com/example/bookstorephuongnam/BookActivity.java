@@ -19,7 +19,7 @@ public class BookActivity extends AppCompatActivity {
     public void callThemBookActivity(View view) {
         Intent intent = new Intent(getApplicationContext(), AddBookActivity.class);
         Pair[] pairs = new Pair[1];
-        pairs[0] = new Pair<View, String>(findViewById(R.id.fab_theloai), "transition_book");
+        pairs[0] = new Pair<View, String>(findViewById(R.id.fab_book), "transition_book");
 
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(BookActivity.this);
         startActivity(intent, options.toBundle());

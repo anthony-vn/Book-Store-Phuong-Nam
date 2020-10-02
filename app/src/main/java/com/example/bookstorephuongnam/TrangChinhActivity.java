@@ -108,6 +108,9 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
             case R.id.nav_sach:
                 startActivity(new Intent(getApplicationContext(), BookActivity.class));
                 break;
+            case R.id.nav_hoadon:
+                startActivity(new Intent(getApplicationContext(), HoaDonActivity.class));
+                break;
         }
         return true;
     }

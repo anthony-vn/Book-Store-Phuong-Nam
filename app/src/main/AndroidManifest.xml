@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddHoaDonActivity"></activity>
+        <activity android:name=".HoaDonChiTietActivity"></activity>
+        <activity android:name=".AddHoaDonActivity" />
         <activity android:name=".HoaDonActivity" />
         <activity android:name=".AddBookActivity" />
         <activity android:name=".BookActivity" />
@@ -23,15 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".PasswordUpdateActivity" />
-        <activity android:name=".ForgotPasswordActivity">
-
-        </activity>
-        <activity android:name=".SignUpActivity">
-
-        </activity>
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".TrangChinhActivity" />
     </application>
 
