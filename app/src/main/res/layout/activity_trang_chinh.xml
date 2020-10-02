@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawable_layout"
+    android:background="#243441"
     tools:context=".TrangChinhActivity">
 
     <com.google.android.material.navigation.NavigationView
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/colorWhite"
+        android:background="#243441"
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/my_navigation_item">
 
@@ -38,14 +39,14 @@
 
             <ImageView
                 android:id="@+id/imgAddNav"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:elevation="6dp"
-                android:src="@drawable/ic_hairstyle" />
+                android:src="@drawable/ic_user" />
         </RelativeLayout>
 
         <ScrollView
@@ -63,10 +64,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:fontFamily="@font/muli_semibold"
                     android:gravity="center_horizontal"
                     android:text="Nhà Sách Phương Nam"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="32sp"
                     android:textStyle="bold" />
 
@@ -81,7 +81,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginBottom="10dp"
                         android:text="Doanh thu hôm nay"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -295,7 +295,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginBottom="10dp"
                         android:text="Sách bán chạy nhất"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -395,7 +395,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginBottom="10dp"
                         android:text="Sách tồn kho"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -573,7 +573,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Thống kê tháng trước"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

@@ -23,9 +23,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".PasswordUpdateActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".ForgotPasswordActivity">
+
+        </activity>
+        <activity android:name=".SignUpActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity android:name=".TrangChinhActivity" />
     </application>
 

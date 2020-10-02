@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         tv_forgotPass = findViewById(R.id.tv_forgotPassword);
         tv_signUp = findViewById(R.id.tv_signUp);
         chk_Rem = findViewById(R.id.chkRememberMe);
-        username = findViewById(R.id.edt_username);
         password = findViewById(R.id.edt_password);
     }
 }
