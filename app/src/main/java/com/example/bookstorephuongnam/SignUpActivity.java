@@ -3,6 +3,7 @@ package com.example.bookstorephuongnam;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -18,5 +19,9 @@ public class SignUpActivity extends AppCompatActivity {
     public void onBackPressed() {
         onStop();
         super.onBackPressed();
+    }
+
+    public void retrunSignUp(View view) {
+        finish();
     }
 }
