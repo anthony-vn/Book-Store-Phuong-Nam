@@ -9,17 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PasswordUpdate"></activity>
-        <activity android:name=".forgot_password" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".Login">
+        <activity android:name=".InfAccountActivity"></activity>
+        <activity android:name=".HoaDonChiTietActivity" />
+        <activity android:name=".AddHoaDonActivity" />
+        <activity android:name=".HoaDonActivity" />
+        <activity android:name=".AddBookActivity" />
+        <activity android:name=".BookActivity" />
+        <activity android:name=".AddTheLoaiActivity" />
+        <activity android:name=".TheLoaiActivity" />
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".PasswordUpdateActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".TrangChinhActivity" />
     </application>
 
 </manifest>
