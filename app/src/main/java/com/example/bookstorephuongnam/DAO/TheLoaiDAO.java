@@ -19,6 +19,7 @@ public class TheLoaiDAO {
     public static final String TABLE_NAME = "TheLoai";
     public static final String SQL_THE_LOAI = "CREATE TABLE TheLoai (matheloai text primary key, " +
             "tentheloai text, mota text, vitri int);";
+
     public static final String TAG = "TheLoaiDAO";
 
     public TheLoaiDAO(Context context) {
@@ -71,17 +72,17 @@ public class TheLoaiDAO {
     }
 
     //update
-    public int updateTheLoai(TheLoai theLoai) {
+    public boolean updateTheLoai(TheLoai theLoai) {
         ContentValues values = new ContentValues();
         values.put("matheloai", theLoai.getMaTheLoai());
         values.put("tentheloai", theLoai.getTenTheLoai());
         values.put("mota", theLoai.getMoTa());
         values.put("vitri", theLoai.getViTri());
         int result = db.update(TABLE_NAME, values, "matheloai=?", new String[]{theLoai.getMaTheLoai()});
-        if (result == 0) {
-            return -1;
+        if (result <= 0){
+            return false;
         }
-        return 1;
+        return true;
     }
 
     //delete

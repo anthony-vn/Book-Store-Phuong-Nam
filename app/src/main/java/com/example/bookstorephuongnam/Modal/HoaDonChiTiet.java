@@ -1,6 +1,7 @@
 package com.example.bookstorephuongnam.Modal;
 
 public class HoaDonChiTiet {
+
     private int maHDCT;
     private HoaDon hoaDon;
     private Sach sach;

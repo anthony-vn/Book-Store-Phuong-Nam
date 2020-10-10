@@ -1,6 +1,7 @@
 package com.example.bookstorephuongnam;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -33,6 +34,7 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
     ImageView img_menuicon, img_add;
     LinearLayout contentView;
     static final float END_SCALE = 0.7f;
+    String strUserName, strPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         contentView = findViewById(R.id.content);
 
         //Check Login
+        if (checkLoginShap()<0){
+            Intent i = new Intent(TrangChinhActivity.this, LoginActivity.class);
+            startActivity(i);
+        }
 
         //vô hiệu hóa màu cho item khi chọn trong item navigation view
         navigationView.setItemIconTintList(null);
@@ -56,6 +62,17 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         //Gọi các chức năng
         navigationDrawer();
         rcv_thongkethangtruoc_khoanthu();
+    }
+
+    public int checkLoginShap(){
+        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+        boolean chk = pref.getBoolean("REMEMBER", false);
+        if (chk) {
+            strUserName = pref.getString("USERNAME", "");
+            strPassword = pref.getString("PASSWORD", "");
+            return 1;
+        }
+        return -1;
     }
     private void navigationDrawer() {
         //Navigation Drawer
@@ -106,10 +123,10 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
                 startActivity(new Intent(getApplicationContext(), TheLoaiActivity.class));
                 break;
             case R.id.nav_sach:
-                startActivity(new Intent(getApplicationContext(), BookActivity.class));
+                startActivity(new Intent(getApplicationContext(), ListBookActivity.class));
                 break;
             case R.id.nav_hoadon:
-                startActivity(new Intent(getApplicationContext(), HoaDonActivity.class));
+                startActivity(new Intent(getApplicationContext(), ListHoaDonActivity.class));
                 break;
             case R.id.nav_profile:
                 startActivity(new Intent(getApplicationContext(), InfAccountActivity.class));

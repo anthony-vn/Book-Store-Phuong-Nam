@@ -107,7 +107,7 @@ public class NguoiDungDAO {
         return 1;
     }
 
-//    //check background_login
+    //check background_login
 //    public int checkLogin(String username, String password) {
 //        int result = db.delete(TABLE_NAME, "username=? AND password=?", new String[]{username, password});
 //        if (result == 0)
