@@ -12,12 +12,13 @@ import android.widget.TextView;
 import com.example.bookstorephuongnam.DAO.TheLoaiDAO;
 import com.example.bookstorephuongnam.Modal.TheLoai;
 import com.example.bookstorephuongnam.R;
+
 import java.util.List;
 
 public class Adapter_TheLoai extends BaseAdapter {
+    public Activity context;
     List<TheLoai> listTheLoai;
     TheLoaiDAO theLoaiDAO;
-    public Activity context;
     private LayoutInflater inflater;
 
     public Adapter_TheLoai(Activity context, List<TheLoai> listTheLoai) {
@@ -41,13 +42,6 @@ public class Adapter_TheLoai extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return 0;
-    }
-
-    public static class ViewHolder {
-        ImageView avatar;
-        TextView txtMaTheLoai;
-        TextView txtTenTheLoai;
-        ImageView imgDelete;
     }
 
     @Override
@@ -88,5 +82,12 @@ public class Adapter_TheLoai extends BaseAdapter {
     public void changeDataset(List<TheLoai> items) {
         this.listTheLoai = items;
         notifyDataSetChanged();
+    }
+
+    public static class ViewHolder {
+        ImageView avatar;
+        TextView txtMaTheLoai;
+        TextView txtTenTheLoai;
+        ImageView imgDelete;
     }
 }

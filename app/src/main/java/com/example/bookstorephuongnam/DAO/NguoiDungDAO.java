@@ -5,8 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.bookstorephuongnam.Database.DatabaseHelper;
+import com.example.bookstorephuongnam.LoginActivity;
 import com.example.bookstorephuongnam.Modal.NguoiDung;
 
 import java.util.ArrayList;
@@ -18,7 +20,8 @@ public class NguoiDungDAO {
     private DatabaseHelper dbHelper;
 
     public static final String TABLE_NAME = "NguoiDung";
-    public static final String SQL_NGUOI_DUNG = "CREATE TABLE " +TABLE_NAME+ "(username text primary key, password text, phone text, hoten text);";
+    public static final String SQL_NGUOI_DUNG = "CREATE TABLE " +TABLE_NAME+
+            "(id integer primary key autoincrement, username text, password text, phone text);";
     public static final String TAG = "NguoiDungDAO";
 
     public NguoiDungDAO(Context context) {
@@ -27,20 +30,17 @@ public class NguoiDungDAO {
     }
 
     //insert
-    public int inserNguoiDung(NguoiDung nd) {
+    public boolean inserNguoiDung(NguoiDung nd) {
         ContentValues values = new ContentValues();
+        values.put("id", nd.getId());
         values.put("username", nd.getUserName());
         values.put("password", nd.getPassword());
         values.put("phone", nd.getPhone());
-        values.put("hoten", nd.getHoTen());
-        try {
-            if (db.insert(TABLE_NAME, null, values) == -1) {
-                return -1;
-            }
-        } catch (Exception ex) {
-            Log.e(TAG, ex.toString());
+        long result = db.insert(TABLE_NAME, null, values);
+        if (result > 0){
+            return true;
         }
-        return 1;
+        return false;
     }
 
     //getAll
@@ -53,7 +53,6 @@ public class NguoiDungDAO {
             ee.setUserName(c.getString(0));
             ee.setPassword(c.getString(1));
             ee.setPhone(c.getString(2));
-            ee.setHoTen(c.getString(3));
             dsNguoiDung.add(ee);
             Log.d("//=====", ee.toString());
             c.moveToNext();
@@ -69,7 +68,6 @@ public class NguoiDungDAO {
         values.put("username", nd.getUserName());
         values.put("password", nd.getPassword());
         values.put("phone", nd.getPhone());
-        values.put("hoten", nd.getHoTen());
         int result = db.update(TABLE_NAME, values, "username=?", new String[]{nd.getUserName()});
         if (result == 0) {
             return -1;
@@ -91,7 +89,6 @@ public class NguoiDungDAO {
     public int updateInfoNguoiDung(String username, String phone, String name) {
         ContentValues values = new ContentValues();
         values.put("phone", phone);
-        values.put("hoten", name);
         int result = db.update(TABLE_NAME, values, "username=?", new String[]{username});
         if (result == 0) {
             return -1;
@@ -114,5 +111,54 @@ public class NguoiDungDAO {
 //            return -1;
 //        return 1;
 //    }
+
+    //check login
+    public boolean checkUser(String strPrimaryKey) {
+        //SELECT
+        String[] columns = {"username"};
+        //WHERE clause
+        String selection = "username=?";
+        //WHERE clause arguments
+        String[] selectionArgs = {strPrimaryKey};
+        Cursor c = null;
+        try {
+            c = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+            c.moveToFirst();
+            int i = c.getCount();
+            c.close();
+            if (i <= 0) {
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    //check username if exists
+    public boolean checkUsername_Login(String strUsername) {
+        //SELECT
+        String[] columns = {"username"};
+        //WHERE clause
+        String selection = "username=?";
+        //WHERE clause arguments
+        String[] selectionArgs = {strUsername};
+        Cursor c = null;
+        try {
+            c = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+            c.moveToFirst();
+            int i = c.getCount();
+            c.close();
+            if (i <= 0) {
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 }

@@ -74,7 +74,7 @@ public class Adapter_Books extends BaseAdapter {
             holder.imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sachDAO.deleteSachByID(arrSach.get(position).getMaSach());
+                    sachDAO.deleteSachByID(arrSach.get(position).getId());
                     arrSach.remove(position);
                     notifyDataSetChanged();
                 }

@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookstorephuongnam.Adapter.Adapter_thongkethangtruoc;
-import com.example.bookstorephuongnam.Modal.thongkethangtruoc_class;
+import com.example.bookstorephuongnam.Modal.ThongKeThangTruoc;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -51,10 +51,10 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         contentView = findViewById(R.id.content);
 
         //Check Login
-        if (checkLoginShap()<0){
-            Intent i = new Intent(TrangChinhActivity.this, LoginActivity.class);
-            startActivity(i);
-        }
+//        if (checkLoginShap()<0){
+//            Intent i = new Intent(TrangChinhActivity.this, LoginActivity.class);
+//            startActivity(i);
+//        }
 
         //vô hiệu hóa màu cho item khi chọn trong item navigation view
         navigationView.setItemIconTintList(null);
@@ -64,16 +64,16 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         rcv_thongkethangtruoc_khoanthu();
     }
 
-    public int checkLoginShap(){
-        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
-        boolean chk = pref.getBoolean("REMEMBER", false);
-        if (chk) {
-            strUserName = pref.getString("USERNAME", "");
-            strPassword = pref.getString("PASSWORD", "");
-            return 1;
-        }
-        return -1;
-    }
+//    public int checkLoginShap(){
+//        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+//        boolean chk = pref.getBoolean("REMEMBER", false);
+//        if (chk) {
+//            strUserName = pref.getString("USERNAME", "");
+//            strPassword = pref.getString("PASSWORD", "");
+//            return 1;
+//        }
+//        return -1;
+//    }
     private void navigationDrawer() {
         //Navigation Drawer
         navigationView.bringToFront();
@@ -139,10 +139,10 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         rcv_thongkethangtruoc_khoanthu.setHasFixedSize(true);
         rcv_thongkethangtruoc_khoanthu.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        ArrayList<thongkethangtruoc_class> featuredLocations = new ArrayList<>();
-        featuredLocations.add(new thongkethangtruoc_class(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
-        featuredLocations.add(new thongkethangtruoc_class(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
-        featuredLocations.add(new thongkethangtruoc_class(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
+        ArrayList<ThongKeThangTruoc> featuredLocations = new ArrayList<>();
+        featuredLocations.add(new ThongKeThangTruoc(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
+        featuredLocations.add(new ThongKeThangTruoc(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
+        featuredLocations.add(new ThongKeThangTruoc(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
 
         adapter = new Adapter_thongkethangtruoc(featuredLocations);
         rcv_thongkethangtruoc_khoanthu.setAdapter(adapter);

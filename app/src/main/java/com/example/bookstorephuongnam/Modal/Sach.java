@@ -1,6 +1,7 @@
 package com.example.bookstorephuongnam.Modal;
 
 public class Sach {
+    private int id;
     private String maSach;
     private String maTheLoai;
     private String tenSach;
@@ -12,6 +13,17 @@ public class Sach {
     public Sach() {
     }
 
+    public Sach(int id, String maSach, String maTheLoai, String tenSach, String tacGia, String NXB, double giaBia, int soLuong) {
+        this.id = id;
+        this.maSach = maSach;
+        this.maTheLoai = maTheLoai;
+        this.tenSach = tenSach;
+        this.tacGia = tacGia;
+        this.NXB = NXB;
+        this.giaBia = giaBia;
+        this.soLuong = soLuong;
+    }
+
     public Sach(String maSach, String maTheLoai, String tenSach, String tacGia, String NXB, double giaBia, int soLuong) {
         this.maSach = maSach;
         this.maTheLoai = maTheLoai;
@@ -20,6 +32,14 @@ public class Sach {
         this.NXB = NXB;
         this.giaBia = giaBia;
         this.soLuong = soLuong;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMaSach() {

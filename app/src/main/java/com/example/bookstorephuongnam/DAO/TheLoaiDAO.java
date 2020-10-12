@@ -115,7 +115,6 @@ public class TheLoaiDAO {
             e.printStackTrace();
             return false;
         }
-
     }
 
 

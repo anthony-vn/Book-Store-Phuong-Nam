@@ -43,6 +43,7 @@
             android:textStyle="normal" />
 
         <EditText
+            android:id="@+id/edUsername"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
@@ -59,13 +60,14 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/edPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/border_button_forgot_pass"
-            android:hint="@string/email"
+            android:hint="@string/phoneNumber"
             android:inputType="textNoSuggestions"
             android:padding="14dp"
             android:paddingStart="25dp"
@@ -75,6 +77,7 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/edPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
@@ -91,6 +94,7 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/edConFirmPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
@@ -116,23 +120,22 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/btn_login"
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="65dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/button_signup"
-            android:text="@string/login"
+            android:layout_marginRight="30dp"
+            android:background="@color/colorBlack"
+            android:text="SIGN UP"
+            android:onClick="btn_signup"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="18sp"/>
 
         <TextView
             android:onClick="retrunSignUp"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"

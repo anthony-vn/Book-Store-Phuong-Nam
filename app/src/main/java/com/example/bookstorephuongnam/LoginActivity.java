@@ -1,5 +1,6 @@
 package com.example.bookstorephuongnam;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -22,10 +23,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText edUserName, edPassword;
     CheckBox chk_Rem;
     String strUser, strPass;
-    NguoiDungDAO nguoiDungDAO;
     TextView tv_forgotPass, tv_signUp;
+    NguoiDungDAO nguoiDungDAO;
 
-    ProgressBar simpleProgressBar;
     private long backPressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,29 +34,30 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         anhXa();
 
+        tv_signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void checkLogin(View v) {
         strUser = edUserName.getText().toString();
         strPass = edPassword.getText().toString();
         if (strUser.isEmpty() || strPass.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Tên đăng nhập và mật khẩu không được bỏ trống",
-                    Toast.LENGTH_SHORT).show();
+            edUserName.setError("Username is empty!");
+            edPassword.setError("Password is empty!");
         } else {
             if (strUser.equalsIgnoreCase("admin") && strPass.equalsIgnoreCase("admin")) {
                 rememberUser(strUser, strPass, chk_Rem.isChecked());
                 finish();
-                try {
-                    Thread.sleep(2000);
-
-//                    simpleProgressBar.setBackgroundColor(getColor(R.color.colorBlack));
-//                    simpleProgressBar.setVisibility(View.VISIBLE);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            } if (nguoiDungDAO.checkUsername_Login(strUser)){
+                Toast.makeText(this, "Username or password already exists!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), "Tên đăng nhập và mật khẩu không đúng",
-                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
+                finish();
             }
         }
     }
@@ -95,6 +96,5 @@ public class LoginActivity extends AppCompatActivity {
         chk_Rem = findViewById(R.id.chkRememberMe);
         edUserName = findViewById(R.id.edt_username);
         edPassword = findViewById(R.id.edt_password);
-//        simpleProgressBar = findViewById(R.id.progress_bar);
     }
 }
