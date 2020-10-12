@@ -21,7 +21,7 @@ public class NguoiDungDAO {
 
     public static final String TABLE_NAME = "NguoiDung";
     public static final String SQL_NGUOI_DUNG = "CREATE TABLE " +TABLE_NAME+
-            "(id integer primary key autoincrement, username text, password text, phone text);";
+            "(username text primary key, password text, email text);";
     public static final String TAG = "NguoiDungDAO";
 
     public NguoiDungDAO(Context context) {
@@ -32,10 +32,9 @@ public class NguoiDungDAO {
     //insert
     public boolean inserNguoiDung(NguoiDung nd) {
         ContentValues values = new ContentValues();
-        values.put("id", nd.getId());
-        values.put("username", nd.getUserName());
+        values.put("username", nd.getUsername());
         values.put("password", nd.getPassword());
-        values.put("phone", nd.getPhone());
+        values.put("email", nd.getEmail());
         long result = db.insert(TABLE_NAME, null, values);
         if (result > 0){
             return true;
@@ -50,9 +49,9 @@ public class NguoiDungDAO {
         c.moveToFirst();
         while (c.isAfterLast() == false) {
             NguoiDung ee = new NguoiDung();
-            ee.setUserName(c.getString(0));
+            ee.setUsername(c.getString(0));
             ee.setPassword(c.getString(1));
-            ee.setPhone(c.getString(2));
+            ee.setEmail(c.getString(2));
             dsNguoiDung.add(ee);
             Log.d("//=====", ee.toString());
             c.moveToNext();
@@ -65,10 +64,10 @@ public class NguoiDungDAO {
     //update
     public int updateNguoiDung(NguoiDung nd) {
         ContentValues values = new ContentValues();
-        values.put("username", nd.getUserName());
+        values.put("username", nd.getUsername());
         values.put("password", nd.getPassword());
-        values.put("phone", nd.getPhone());
-        int result = db.update(TABLE_NAME, values, "username=?", new String[]{nd.getUserName()});
+        values.put("email", nd.getEmail());
+        int result = db.update(TABLE_NAME, values, "username=?", new String[]{nd.getUsername()});
         if (result == 0) {
             return -1;
         }
@@ -77,18 +76,18 @@ public class NguoiDungDAO {
 
     public int changePasswordNguoiDung(NguoiDung nd) {
         ContentValues values = new ContentValues();
-        values.put("username", nd.getUserName());
+        values.put("username", nd.getUsername());
         values.put("password", nd.getPassword());
-        int result = db.update(TABLE_NAME, values, "username=?", new String[]{nd.getUserName()});
+        int result = db.update(TABLE_NAME, values, "username=?", new String[]{nd.getUsername()});
         if (result == 0) {
             return -1;
         }
         return 1;
     }
 
-    public int updateInfoNguoiDung(String username, String phone, String name) {
+    public int updateInfoNguoiDung(String username, String email) {
         ContentValues values = new ContentValues();
-        values.put("phone", phone);
+        values.put("email", email);
         int result = db.update(TABLE_NAME, values, "username=?", new String[]{username});
         if (result == 0) {
             return -1;
@@ -135,30 +134,6 @@ public class NguoiDungDAO {
             return false;
         }
 
-    }
-
-    //check username if exists
-    public boolean checkUsername_Login(String strUsername) {
-        //SELECT
-        String[] columns = {"username"};
-        //WHERE clause
-        String selection = "username=?";
-        //WHERE clause arguments
-        String[] selectionArgs = {strUsername};
-        Cursor c = null;
-        try {
-            c = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
-            c.moveToFirst();
-            int i = c.getCount();
-            c.close();
-            if (i <= 0) {
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 
 }

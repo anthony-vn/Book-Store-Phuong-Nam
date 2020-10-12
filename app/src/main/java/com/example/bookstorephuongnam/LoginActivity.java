@@ -50,14 +50,19 @@ public class LoginActivity extends AppCompatActivity {
             edUserName.setError("Username is empty!");
             edPassword.setError("Password is empty!");
         } else {
-            if (strUser.equalsIgnoreCase("admin") && strPass.equalsIgnoreCase("admin")) {
-                rememberUser(strUser, strPass, chk_Rem.isChecked());
-                finish();
-            } if (nguoiDungDAO.checkUsername_Login(strUser)){
-                Toast.makeText(this, "Username or password already exists!", Toast.LENGTH_SHORT).show();
-            } else {
-                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
-                finish();
+            try {
+                if (strUser.equalsIgnoreCase("admin") && strPass.equalsIgnoreCase("admin")) {
+                    rememberUser(strUser, strPass, chk_Rem.isChecked());
+                    startActivity(new Intent(this, TrangChinhActivity.class));
+                    finish();
+                } if (nguoiDungDAO.checkUsername_Login(strUser)){
+                    startActivity(new Intent(this, TrangChinhActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(this, "Lỗi, không thể đăng nhập!", Toast.LENGTH_SHORT).show();
+                }
+            }catch (Exception e){
+                Toast.makeText(this, "" + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         }
     }

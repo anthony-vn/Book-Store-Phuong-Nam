@@ -117,7 +117,8 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_home:
-                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
+//                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_theloai:
                 startActivity(new Intent(getApplicationContext(), TheLoaiActivity.class));

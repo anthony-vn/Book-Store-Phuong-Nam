@@ -1,5 +1,6 @@
 package com.example.bookstorephuongnam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +13,7 @@ import com.example.bookstorephuongnam.Modal.NguoiDung;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText edtUsername, edtPhone, edtPassword, edTConfirmPass;
+    EditText edtUsername, edtEmail, edtPassword, edTConfirmPass;
     NguoiDungDAO nguoiDungDAO;
 
     @Override
@@ -21,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         //View
         edtUsername = findViewById(R.id.edUsername);
-        edtPhone = findViewById(R.id.edPhoneNumber);
+        edtEmail = findViewById(R.id.edEmail);
         edtPassword = findViewById(R.id.edPassword);
         edTConfirmPass = findViewById(R.id.edConFirmPassword);
 
@@ -38,20 +39,25 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void btn_signup(View view) {
+        String username_ = edtUsername.getText().toString();
+        String email_ = edtEmail.getText().toString();
+        String password_ = edtUsername.getText().toString();
+        String confirmPass_ = edTConfirmPass.getText().toString();
 
-        NguoiDung nd = new NguoiDung(edtUsername.getText().toString(), edtPassword.getText().toString(), edtPhone.getText().toString());
-        if (edtUsername.getText().toString().isEmpty() || edtPhone.getText().toString().isEmpty() || edtPassword.getText().toString().isEmpty() || edTConfirmPass.getText().toString().isEmpty()) {
+        NguoiDung nd = new NguoiDung(username_, password_, email_);
+        if (username_.isEmpty() || password_.isEmpty() || email_.isEmpty() || confirmPass_.isEmpty()) {
             edtUsername.setError("Username is empty!");
-            edtPhone.setError("Phone numer is empty!");
             edtPassword.setError("Password is empty!");
+            edtEmail.setError("Email is empty!");
             edTConfirmPass.setError("Confirm password is empty!");
         } else {
-            if (nguoiDungDAO.checkUser(nd.getUserName())) {
+            if (nguoiDungDAO.checkUser(username_)) {
                 Toast.makeText(this, "Username already exist!", Toast.LENGTH_SHORT).show();
             } else {
-                if (edtPassword.getText().toString().equals(edTConfirmPass.getText().toString())) {
+                if (password_.equals(confirmPass_)) {
                     nguoiDungDAO.inserNguoiDung(nd);
                     Toast.makeText(getApplicationContext(), "Sign up successfully!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignUpActivity.this, TrangChinhActivity.class));
                     finish();
                 } else
                     Toast.makeText(this, "Sign up failed!", Toast.LENGTH_SHORT).show();

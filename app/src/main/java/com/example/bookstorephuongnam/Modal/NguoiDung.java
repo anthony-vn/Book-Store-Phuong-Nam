@@ -1,41 +1,25 @@
 package com.example.bookstorephuongnam.Modal;
 
 public class NguoiDung {
-    private int id;
-    private String userName;
+    private String username;
     private String password;
-    private String phone;
+    private String email;
 
     public NguoiDung() {
     }
 
-    public NguoiDung(int id, String userName, String password, String phone) {
-        this.id = id;
-        this.userName = userName;
+    public NguoiDung(String username, String password, String email) {
+        this.username = username;
         this.password = password;
-        this.phone = phone;
+        this.email = email;
     }
 
-    public NguoiDung(String userName, String password, String phone) {
-        this.userName = userName;
-        this.password = password;
-        this.phone = phone;
+    public String getUsername() {
+        return username;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -46,20 +30,20 @@ public class NguoiDung {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
         return "NguoiDung{" +
-                "userName='" + userName + '\'' +
+                "userName='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
+                ", phone='" + email + '\'' +
                 '}';
     }
 }
