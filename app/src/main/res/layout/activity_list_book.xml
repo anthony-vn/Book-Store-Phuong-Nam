@@ -38,13 +38,6 @@
             android:layout_weight="4"
             android:hint="Mã sách" />
 
-        <Button
-            android:id="@+id/btnTim"
-            android:layout_gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="Search" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

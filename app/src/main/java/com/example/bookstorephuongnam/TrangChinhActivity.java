@@ -1,7 +1,6 @@
 package com.example.bookstorephuongnam;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,16 +25,15 @@ import java.util.ArrayList;
 
 public class TrangChinhActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    static final float END_SCALE = 0.7f;
     RecyclerView rcv_thongkethangtruoc_khoanthu;
     RecyclerView.Adapter adapter;
-    private GradientDrawable gradient1, gradient2, gradient3;
     //Drawer Menu
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView img_menuicon, img_add;
     LinearLayout contentView;
-    static final float END_SCALE = 0.7f;
-    String strUserName, strPassword;
+    GradientDrawable gradient1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +49,6 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         img_menuicon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
 
-        //Check Login
-//        if (checkLoginShap()<0){
-//            Intent i = new Intent(TrangChinhActivity.this, LoginActivity.class);
-//            startActivity(i);
-//        }
-
         //vô hiệu hóa màu cho item khi chọn trong item navigation view
         navigationView.setItemIconTintList(null);
 
@@ -64,16 +57,6 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         rcv_thongkethangtruoc_khoanthu();
     }
 
-//    public int checkLoginShap(){
-//        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
-//        boolean chk = pref.getBoolean("REMEMBER", false);
-//        if (chk) {
-//            strUserName = pref.getString("USERNAME", "");
-//            strPassword = pref.getString("PASSWORD", "");
-//            return 1;
-//        }
-//        return -1;
-//    }
     private void navigationDrawer() {
         //Navigation Drawer
         navigationView.bringToFront();
@@ -115,9 +98,8 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_home:
-//                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_theloai:
@@ -136,7 +118,7 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         return true;
     }
 
-    private void rcv_thongkethangtruoc_khoanthu(){
+    private void rcv_thongkethangtruoc_khoanthu() {
         rcv_thongkethangtruoc_khoanthu.setHasFixedSize(true);
         rcv_thongkethangtruoc_khoanthu.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
@@ -147,7 +129,6 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
 
         adapter = new Adapter_thongkethangtruoc(featuredLocations);
         rcv_thongkethangtruoc_khoanthu.setAdapter(adapter);
-
 
         gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400, 0xffaff600});
     }

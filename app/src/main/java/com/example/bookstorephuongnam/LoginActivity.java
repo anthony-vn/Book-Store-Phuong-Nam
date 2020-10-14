@@ -1,105 +1,97 @@
 package com.example.bookstorephuongnam;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.bookstorephuongnam.DAO.NguoiDungDAO;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText edUserName, edPassword;
-    CheckBox chk_Rem;
-    String strUser, strPass;
-    TextView tv_forgotPass, tv_signUp;
-    NguoiDungDAO nguoiDungDAO;
+    EditText edtEmail, edtPassword;
+    Button btnLogin;
+    TextView tvSignUp, tvForgotPass;
+    ProgressBar pbLogin;
+    FirebaseAuth firebaseAuth;
 
-    private long backPressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-        anhXa();
 
-        tv_signUp.setOnClickListener(new View.OnClickListener() {
+        pbLogin = findViewById(R.id.pbLogin);
+        edtEmail = findViewById(R.id.edt_email);
+        edtPassword = findViewById(R.id.edt_password);
+        btnLogin = findViewById(R.id.btnSignIn);
+        tvSignUp = findViewById(R.id.tv_signUp);
+        tvForgotPass = findViewById(R.id.tv_forgotPassword);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                String email_ = edtEmail.getText().toString().trim();
+                String password_ = edtPassword.getText().toString().trim();
+                if (TextUtils.isEmpty(email_)) {
+                    edtEmail.setError("Email is empty!");
+                    return;
+                }
+                if (TextUtils.isEmpty(password_)) {
+                    edtPassword.setError("Password is empty!");
+                    return;
+                }
+                if (password_.length() < 6) {
+                    edtPassword.setError("Password must be >= 6 characters.");
+                    return;
+                }
+
+                pbLogin.setVisibility(View.VISIBLE);
+
+                //Login in with firebase
+                firebaseAuth.signInWithEmailAndPassword(email_, password_).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        //
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Login successfully!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            pbLogin.setVisibility(View.INVISIBLE);
+                        }
+                    }
+                });
+
             }
         });
-    }
 
-    public void checkLogin(View v) {
-        strUser = edUserName.getText().toString();
-        strPass = edPassword.getText().toString();
-        if (strUser.isEmpty() || strPass.isEmpty()) {
-            edUserName.setError("Username is empty!");
-            edPassword.setError("Password is empty!");
-        } else {
-            try {
-                if (strUser.equalsIgnoreCase("admin") && strPass.equalsIgnoreCase("admin")) {
-                    rememberUser(strUser, strPass, chk_Rem.isChecked());
-                    startActivity(new Intent(this, TrangChinhActivity.class));
-                    finish();
-                } if (nguoiDungDAO.checkUsername_Login(strUser)){
-                    startActivity(new Intent(this, TrangChinhActivity.class));
-                    finish();
-                } else {
-                    Toast.makeText(this, "Lỗi, không thể đăng nhập!", Toast.LENGTH_SHORT).show();
-                }
-            }catch (Exception e){
-                Toast.makeText(this, "" + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+                finish();
             }
-        }
-    }
+        });
 
-
-    @Override
-    public void onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()) {
-            super.onBackPressed();
-            return;
-        } else {
-            Toast.makeText(getBaseContext(), "Nhấn lần nữa để thoát!", Toast.LENGTH_SHORT).show();
-        }
-        backPressedTime = System.currentTimeMillis();
-    }
-
-    public void rememberUser(String u, String p, boolean status) {
-        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
-        SharedPreferences.Editor edit = pref.edit();
-        if (!status) {
-            //xoa tinh trang luu tru truoc do
-            edit.clear();
-        } else {
-            //luu du lieu
-            edit.putString("USERNAME", u);
-            edit.putString("PASSWORD", p);
-            edit.putBoolean("REMEMBER", status);
-        }
-        //luu lai toan bo
-        edit.commit();
-    }
-
-    private void anhXa() {
-        tv_forgotPass = findViewById(R.id.tv_forgotPassword);
-        tv_signUp = findViewById(R.id.tv_signUp);
-        chk_Rem = findViewById(R.id.chkRememberMe);
-        edUserName = findViewById(R.id.edt_username);
-        edPassword = findViewById(R.id.edt_password);
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+                finish();
+            }
+        });
     }
 }

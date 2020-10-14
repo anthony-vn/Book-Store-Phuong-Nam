@@ -2,6 +2,7 @@ package com.example.bookstorephuongnam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,7 +14,8 @@ public class PasswordUpdateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update_password);
     }
 
-    public void retrunUpdatePass(View view) {
+    public void returnLogin(View view) {
+        startActivity(new Intent(PasswordUpdateActivity.this, LoginActivity.class));
         finish();
     }
 }

@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.bookstorephuongnam.DAO.HoaDonChiTietDAO;
 import com.example.bookstorephuongnam.DAO.HoaDonDAO;
-import com.example.bookstorephuongnam.DAO.NguoiDungDAO;
 import com.example.bookstorephuongnam.DAO.SachDAO;
 import com.example.bookstorephuongnam.DAO.TheLoaiDAO;
 
@@ -21,7 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(NguoiDungDAO.SQL_NGUOI_DUNG);
         db.execSQL(TheLoaiDAO.SQL_THE_LOAI);
         db.execSQL(SachDAO.SQL_SACH);
         db.execSQL(HoaDonDAO.SQL_HOA_DON);
@@ -31,7 +29,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("Drop table if exists " + NguoiDungDAO.TABLE_NAME);
         db.execSQL("Drop table if exists " + TheLoaiDAO.TABLE_NAME);
         db.execSQL("Drop table if exists " + SachDAO.TABLE_NAME);
         db.execSQL("Drop table if exists " + HoaDonDAO.TABLE_NAME);

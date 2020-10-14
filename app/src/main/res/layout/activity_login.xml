@@ -49,7 +49,7 @@
             android:layout_marginTop="46dp"
             android:text="Sign in!"
             android:textColor="#fff"
-            android:textSize="32dp"
+            android:textSize="36dp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -67,13 +67,13 @@
             app:hintTextAppearance="@style/HintText">
 
             <EditText
-                android:id="@+id/edt_username"
+                android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/boder_edit_text"
                 android:ems="10"
                 android:fontFamily="sans-serif-condensed"
-                android:hint="Username"
+                android:hint="Email"
                 android:inputType="textNoSuggestions|textCapSentences"
                 android:paddingStart="25dp"
                 android:paddingEnd="25dp"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:hint="@string/password"
+            android:hint="Password"
             android:textColorHint="#80FFFFFF"
             app:counterTextAppearance="@style/CounterText"
             app:endIconTint="@color/colorBlack"
@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <CheckBox
@@ -139,41 +139,38 @@
 
         </LinearLayout>
 
-<!--        <ProgressBar-->
-<!--            android:id="@+id/progress_bar"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:progress="25"-->
-<!--            android:visibility="visible"-->
-<!--            style="@style/Animation.Design.BottomSheetDialog"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"/>-->
-
         <Button
+            android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="65dp"
             android:layout_marginRight="30dp"
             android:background="@color/colorBlack"
-            android:text="@string/login"
-            android:onClick="checkLogin"
-            android:textAllCaps="false"
+            android:text="Login"
             android:textColor="@color/colorWhite"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
+
+        <ProgressBar
+            android:id="@+id/pbLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/you_don_t_have_an_account"
+                android:text="You don't have account?"
                 android:textColor="@color/colorWhite"
                 android:textSize="16sp"
                 android:textStyle="normal" />
