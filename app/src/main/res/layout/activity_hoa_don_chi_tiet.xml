@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#243441"
+    android:transitionName="transition_NextToHoaDonChiTiet"
     tools:context=".HoaDonChiTietActivity">
 
     <ImageView
@@ -12,7 +13,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:onClick="returnThemHoaDon"
+        android:onClick="returnAddHoaDon"
         android:src="@drawable/back_ic" />
     <EditText
         android:id="@+id/edMaHoaDon"
@@ -20,10 +21,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#00000000"
+        android:textColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
 
     <EditText
+        android:id="@+id/edMaSach"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="20dp"
@@ -39,6 +42,7 @@
         android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/edSoLuongMua"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="20dp"
@@ -68,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="AddHoaDonChiTiet"
+            android:onClick="AddHoaDonCchiTiet"
             android:text="Thêm"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"/>
@@ -79,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ClickThanhToan"
+            android:onClick="ThanhToanHoaDon"
             android:text="Thanh Toán"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"/>

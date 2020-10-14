@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#243441"
-    android:transitionName="transition_theloai"
-    tools:context=".AddTheLoaiActivity">
+    tools:context=".UpdateTheLoaiActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,13 +20,12 @@
             android:src="@drawable/back_ic" />
 
         <TextView
-            android:id="@+id/tv_titleAddTheLoai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/muli_extrabold"
-            android:text="Thêm thể loại sách"
+            android:text="Update Category Book"
             android:textColor="@color/colorWhite"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -45,7 +43,7 @@
             android:padding="20dp">
 
             <EditText
-                android:id="@+id/edt_matheloai"
+                android:id="@+id/edtUpdate_matheloai"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -62,7 +60,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/edt_tentheloai"
+                android:id="@+id/edtUpdate_tentheloai"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -80,7 +78,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/edt_vitri"
+                android:id="@+id/edtUpdate_vitri"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -98,7 +96,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/edt_mota"
+                android:id="@+id/edtUpdate_mota"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -124,12 +122,12 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnAddTheLoai"
+                    android:id="@+id/btnUpdateTheLoai"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ADD"
-                    android:onClick="AddTheLoai"
+                    android:text="Update"
+                    android:onClick="UpdateTheLoai"
                     android:textColor="@color/colorWhite"
                     android:background="@color/colorBlack"/>
             </LinearLayout>

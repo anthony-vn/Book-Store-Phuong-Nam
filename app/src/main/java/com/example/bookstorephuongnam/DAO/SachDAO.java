@@ -19,7 +19,8 @@ public class SachDAO {
 
     public static final String TABLE_NAME = "Sach";
     public static final String SQL_SACH = "CREATE TABLE Sach " +
-            "(maSach text primary key, " +
+            "(id integer primary key autoincrement, " +
+            "maSach text, " +
             "maTheLoai text, " +
             "tensach text," +
             "tacGia text, " +
@@ -36,15 +37,16 @@ public class SachDAO {
     //insert
     public int inserSach(Sach s) {
         ContentValues values = new ContentValues();
-        values.put("maSach", s.getMaSach());
-        values.put("maTheLoai", s.getMaTheLoai());
+        values.put("id", s.getId());
+        values.put("masach", s.getMaSach());
+        values.put("mathetoai", s.getMaTheLoai());
         values.put("tensach", s.getTenSach());
-        values.put("tacGia", s.getTacGia());
-        values.put("NXB", s.getNXB());
-        values.put("giaBia", s.getGiaBia());
-        values.put("soLuong", s.getSoLuong());
+        values.put("tacgia", s.getTacGia());
+        values.put("nxb", s.getNXB());
+        values.put("giabia", s.getGiaBia());
+        values.put("soluong", s.getSoLuong());
         if (checkPrimaryKey(s.getMaSach())) {
-            int result = db.update(TABLE_NAME, values, "masach=?", new String[]{s.getMaSach()});
+            int result = db.update(TABLE_NAME, values,"masach=?", new String[]{s.getMaSach()});
             if (result == 0) {
                 return -1;
             }
@@ -86,14 +88,15 @@ public class SachDAO {
     //update
     public int updateSach(Sach s) {
         ContentValues values = new ContentValues();
-        values.put("maSach", s.getMaSach());
-        values.put("maTheLoai", s.getMaTheLoai());
+        values.put("id", s.getId());
+        values.put("masach", s.getMaSach());
+        values.put("matheloai", s.getMaTheLoai());
         values.put("tensach", s.getTenSach());
-        values.put("tacGia", s.getTacGia());
-        values.put("NXB", s.getNXB());
-        values.put("giaBia", s.getGiaBia());
-        values.put("soLuong", s.getSoLuong());
-        int result = db.update(TABLE_NAME, values, "maSach=?", new String[]{s.getMaSach()});
+        values.put("tacgia", s.getTacGia());
+        values.put("nxb", s.getNXB());
+        values.put("giabia", s.getGiaBia());
+        values.put("soluong", s.getSoLuong());
+        int result = db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(s.getId())});
         if (result == 0) {
             return -1;
         }
@@ -101,8 +104,8 @@ public class SachDAO {
     }
 
     //delete
-    public int deleteSachByID(String maSach) {
-        int result = db.delete(TABLE_NAME, "maSach=?", new String[]{maSach});
+    public int deleteSachByID(int id) {
+        int result = db.delete(TABLE_NAME, "id=?", new String[]{String.valueOf(id)});
         if (result == 0)
             return -1;
         return 1;
@@ -168,12 +171,12 @@ public class SachDAO {
     }
 
     //getAll
-    public Sach getSachByID(String maSach) {
+    public Sach getSachByID(String strMaSach) {
         Sach s = null;
         //WHERE clause
         String selection = "masach=?";
         //WHERE clause arguments
-        String[] selectionArgs = {maSach};
+        String[] selectionArgs = {strMaSach};
         Cursor c = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
         Log.d("getSachByID", "===>" + c.getCount());
         c.moveToFirst();

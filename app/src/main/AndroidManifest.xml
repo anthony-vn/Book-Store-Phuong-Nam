@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bookstorephuongnam">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfAccountActivity"></activity>
-        <activity android:name=".HoaDonChiTietActivity" />
+        <activity android:name=".HoaDonChiTietActivity"/>
         <activity android:name=".AddHoaDonActivity" />
-        <activity android:name=".HoaDonActivity" />
+        <activity android:name=".ListHoaDonActivity" />
+        <activity android:name=".UpdateBookActivity" />
+        <activity android:name=".UpdateTheLoaiActivity" />
+        <activity android:name=".InfAccountActivity" />
         <activity android:name=".AddBookActivity" />
-        <activity android:name=".BookActivity" />
+        <activity android:name=".ListBookActivity" />
         <activity android:name=".AddTheLoaiActivity" />
         <activity android:name=".TheLoaiActivity" />
         <activity android:name=".SplashScreenActivity">

@@ -3,6 +3,7 @@ package com.example.bookstorephuongnam.Modal;
 import java.util.Date;
 
 public class HoaDon {
+
     private String maHoaDon;
     private Date ngayMua;
 

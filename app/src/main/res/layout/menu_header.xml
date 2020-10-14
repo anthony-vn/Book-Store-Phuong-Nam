@@ -1,44 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:background="#243441">
 
     <TextView
-        android:id="@+id/email_headerMenu"
+        android:id="@+id/header_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
-        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:text="haunhps13181@fpt.edu.vn"
         android:textColor="#FFFFFF"
-        android:text="haunhps13181@fpt.edu.vn" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/app_name"
-        android:layout_marginLeft="15dp"
+        android:id="@+id/header_Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/email_headerMenu"
+        android:layout_above="@id/header_Email"
+        android:layout_marginLeft="15dp"
         android:fontFamily="@font/brandon_grotesque_black"
         android:text="Anthony"
         android:textColor="@color/colorWhite"
         android:textSize="24sp" />
 
     <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/header_Username"
         android:layout_marginLeft="15dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_above="@id/app_name"
-        android:src="@drawable/man" />
+        android:src="@drawable/ic_user" />
 
     <ImageView
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="-1.5dp"
-        android:layout_below="@id/email_headerMenu"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_below="@id/header_Email"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="-1.5dp"
+        android:layout_marginRight="15dp"
         android:background="#80FFFFFF" />
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,22 +18,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookstorephuongnam.Adapter.Adapter_thongkethangtruoc;
-import com.example.bookstorephuongnam.Modal.thongkethangtruoc_class;
+import com.example.bookstorephuongnam.Modal.ThongKeThangTruoc;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 public class TrangChinhActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    static final float END_SCALE = 0.7f;
     RecyclerView rcv_thongkethangtruoc_khoanthu;
     RecyclerView.Adapter adapter;
-    private GradientDrawable gradient1, gradient2, gradient3;
     //Drawer Menu
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView img_menuicon, img_add;
     LinearLayout contentView;
-    static final float END_SCALE = 0.7f;
+    GradientDrawable gradient1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +49,6 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         img_menuicon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
 
-        //Check Login
-
         //vô hiệu hóa màu cho item khi chọn trong item navigation view
         navigationView.setItemIconTintList(null);
 
@@ -57,6 +56,7 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         navigationDrawer();
         rcv_thongkethangtruoc_khoanthu();
     }
+
     private void navigationDrawer() {
         //Navigation Drawer
         navigationView.bringToFront();
@@ -98,18 +98,18 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_home:
-                startActivity(new Intent(getApplicationContext(), TrangChinhActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_theloai:
                 startActivity(new Intent(getApplicationContext(), TheLoaiActivity.class));
                 break;
             case R.id.nav_sach:
-                startActivity(new Intent(getApplicationContext(), BookActivity.class));
+                startActivity(new Intent(getApplicationContext(), ListBookActivity.class));
                 break;
             case R.id.nav_hoadon:
-                startActivity(new Intent(getApplicationContext(), HoaDonActivity.class));
+                startActivity(new Intent(getApplicationContext(), ListHoaDonActivity.class));
                 break;
             case R.id.nav_profile:
                 startActivity(new Intent(getApplicationContext(), InfAccountActivity.class));
@@ -118,18 +118,17 @@ public class TrangChinhActivity extends AppCompatActivity implements NavigationV
         return true;
     }
 
-    private void rcv_thongkethangtruoc_khoanthu(){
+    private void rcv_thongkethangtruoc_khoanthu() {
         rcv_thongkethangtruoc_khoanthu.setHasFixedSize(true);
         rcv_thongkethangtruoc_khoanthu.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        ArrayList<thongkethangtruoc_class> featuredLocations = new ArrayList<>();
-        featuredLocations.add(new thongkethangtruoc_class(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
-        featuredLocations.add(new thongkethangtruoc_class(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
-        featuredLocations.add(new thongkethangtruoc_class(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
+        ArrayList<ThongKeThangTruoc> featuredLocations = new ArrayList<>();
+        featuredLocations.add(new ThongKeThangTruoc(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
+        featuredLocations.add(new ThongKeThangTruoc(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
+        featuredLocations.add(new ThongKeThangTruoc(R.drawable.ic_analytics, "22/04/2020", "2.234.423 VNĐ"));
 
         adapter = new Adapter_thongkethangtruoc(featuredLocations);
         rcv_thongkethangtruoc_khoanthu.setAdapter(adapter);
-
 
         gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400, 0xffaff600});
     }

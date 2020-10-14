@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "831123128067",
+    "firebase_url": "https://phuongnam-f81d8.firebaseio.com",
+    "project_id": "phuongnam-f81d8",
+    "storage_bucket": "phuongnam-f81d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831123128067:android:7a8b412fc5616523a3b336",
+        "android_client_info": {
+          "package_name": "com.example.bookstorephuongnam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831123128067-7v5l4f1icjm4m7t3olqd5h2pjoeead1e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bookstorephuongnam",
+            "certificate_hash": "2fb7b302774b489599e33c0737ca42b6900b769b"
+          }
+        },
+        {
+          "client_id": "831123128067-imagj90gabq5pg14vuc6aal1pjtb3knd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRXZ2gK-RndOcb9tGCvAdv-ek3hLge03w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831123128067-imagj90gabq5pg14vuc6aal1pjtb3knd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

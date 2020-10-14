@@ -2,57 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#D2CFCF"
-    android:padding="4dp"
     android:layout_margin="4dp"
-    android:weightSum="4"
-    android:orientation="horizontal">
+    android:background="#D2CFCF"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    android:weightSum="4">
 
     <ImageView
-        android:id="@+id/img_avatar"
+        android:id="@+id/img_avatar_hoadon"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/ic_bar_chart"/>
+        android:src="@drawable/ic_analytics" />
 
     <LinearLayout
-        android:layout_weight="4"
-        android:layout_gravity="center_vertical"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="4"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_matheloai"
+            android:id="@+id/tv_mahoadon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mã thể loại sách"
+            android:layout_marginLeft="20dp"
+            android:text="Mã hóa đơn"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"/>
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_tentheloai"
+            android:id="@+id/tv_date_hoadon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tên thể loại sách"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:text="20-02-2020"
+            android:textSize="14sp"
+            android:textStyle="normal" />
 
     </LinearLayout>
+
     <LinearLayout
-        android:layout_gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/img_delete_theloai"
-            android:layout_gravity="top"
+            android:id="@+id/img_delete_hoadon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_close"
-            android:layout_marginBottom="5dp"/>
+            android:layout_gravity="top"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_close" />
 
     </LinearLayout>
 

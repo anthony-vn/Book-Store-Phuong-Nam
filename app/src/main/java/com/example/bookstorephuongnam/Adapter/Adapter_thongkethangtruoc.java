@@ -1,25 +1,23 @@
 package com.example.bookstorephuongnam.Adapter;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.bookstorephuongnam.Modal.thongkethangtruoc_class;
+import com.example.bookstorephuongnam.Modal.ThongKeThangTruoc;
 import com.example.bookstorephuongnam.R;
 
 import java.util.ArrayList;
 
 public class Adapter_thongkethangtruoc extends RecyclerView.Adapter<Adapter_thongkethangtruoc.FeaturedViewHolder>{
-    ArrayList<thongkethangtruoc_class> featuredLocations;
+    ArrayList<ThongKeThangTruoc> featuredLocations;
 
-    public Adapter_thongkethangtruoc(ArrayList<thongkethangtruoc_class> featuredLocations) {
+    public Adapter_thongkethangtruoc(ArrayList<ThongKeThangTruoc> featuredLocations) {
         this.featuredLocations = featuredLocations;
     }
 
@@ -34,7 +32,7 @@ public class Adapter_thongkethangtruoc extends RecyclerView.Adapter<Adapter_thon
 
     @Override
     public void onBindViewHolder(@NonNull FeaturedViewHolder holder, int position) {
-        thongkethangtruoc_class featuredHelperClass = featuredLocations.get(position);
+        ThongKeThangTruoc featuredHelperClass = featuredLocations.get(position);
         holder.img.setImageResource(featuredHelperClass.getImage());
         holder.money.setText(featuredHelperClass.getMoney());
         holder.date.setText(featuredHelperClass.getDate());

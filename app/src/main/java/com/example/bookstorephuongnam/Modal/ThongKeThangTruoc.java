@@ -1,11 +1,11 @@
 package com.example.bookstorephuongnam.Modal;
 
-public class thongkethangtruoc_class {
+public class ThongKeThangTruoc {
     private int image;
     private String date;
     private String money;
 
-    public thongkethangtruoc_class(int image, String date, String money) {
+    public ThongKeThangTruoc(int image, String date, String money) {
         this.image = image;
         this.date = date;
         this.money = money;
